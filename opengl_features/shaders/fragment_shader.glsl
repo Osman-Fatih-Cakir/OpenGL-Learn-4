@@ -1,6 +1,9 @@
 #version 330 core
 
-in vec4 fColor;
+//in vec4 fColor;
+in vec2 fTexCoord;
+
+uniform sampler2D image;
 
 uniform int depth_mode;
 
@@ -9,7 +12,14 @@ out vec4 out_color;
 void main()
 {
 	if (depth_mode == 0)
-		out_color = fColor;
+	{
+		out_color = texture(image, fTexCoord);
+
+		if (out_color.a < 0.1) // If this part of fragment is transparent, discard this fragment
+		{
+			discard;
+		}
+	}
 	else 
 	{
 		// Transform non-linear depth values to linear depth values to see the depth values more clear with the color

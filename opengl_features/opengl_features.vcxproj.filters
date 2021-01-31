@@ -38,5 +38,7 @@
     <None Include="shaders\fragment_shader.glsl" />
     <None Include="shaders\stencil_vs.glsl" />
     <None Include="shaders\stencil_fs.glsl" />
+    <None Include="shaders\screen_vs.glsl" />
+    <None Include="shaders\screen_fs.glsl" />
   </ItemGroup>
 </Project>
