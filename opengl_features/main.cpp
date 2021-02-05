@@ -502,7 +502,7 @@ void draw_scaled_cubes(float scale)
 		glUniformMatrix4fv(model_loc, 1, GL_FALSE, &temp_model[0][0]);
 
 		glBindVertexArray(cubeVAOs[i]);
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, nullptr);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
 	}
 }
