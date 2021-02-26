@@ -594,6 +594,8 @@ void stencil_render()
 	draw_quad();
 
 	glutSwapBuffers();
+
+	glutPostRedisplay(); // Render loop
 }
 
 void render()
@@ -628,4 +630,6 @@ void render()
 	draw_quad();
 
 	glutSwapBuffers();
+
+	glutPostRedisplay(); // Render loop
 }
