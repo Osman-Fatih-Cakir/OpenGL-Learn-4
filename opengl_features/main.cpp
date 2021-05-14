@@ -437,7 +437,7 @@ void init_transparent()
 void sort_transparent(std::vector<vec3> vector)
 {
 	// Map the transparent objects according to the distance from the camera 
-	for (int i = 0; i < transparent_positions.size(); i++)
+	for (unsigned int i = 0; i < transparent_positions.size(); i++)
 	{
 		float distance = glm::length(eye - transparent_positions[i]);
 		sorted[distance] = transparent_positions[i];
@@ -523,7 +523,7 @@ void draw_transparent()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
 	// Draw transparent objects with a sequence !
-	for (int i = 0; i < transparent_positions.size(); i++)
+	for (unsigned int i = 0; i < transparent_positions.size(); i++)
 	{
 		glUniformMatrix4fv(model_loc, 1, GL_FALSE, &(transparent_models[i])[0][0]);
 
